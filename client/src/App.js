@@ -19,7 +19,7 @@ function App() {
         try {
             setLoading(true);
             setError(null);
-            const response = await axios.get('/api/products');
+            const response = await axios.get('https://jewelery-website-production.up.railway.app/api/products');
             setProducts(response.data);
         } catch (err) {
             setError('Failed to load products. Please try again later.');
@@ -38,7 +38,7 @@ function App() {
             <Header />
 
             <main className="main-content">
-               
+
 
                 <section className="products-section">
                     <div className="container">
@@ -46,12 +46,12 @@ function App() {
                         {error && <ErrorMessage message={error} onRetry={handleRetry} />}
                         {!loading && !error && (
                             <>
-                                                <div className="section-header">
-                  <h2 className="section-title">Product list</h2>
-                  <p className="section-subtitle">
-                    Each piece is crafted with precision and priced according to current gold market rates
-                  </p>
-                </div>
+                                <div className="section-header">
+                                    <h2 className="section-title">Product list</h2>
+                                    <p className="section-subtitle">
+                                        Each piece is crafted with precision and priced according to current gold market rates
+                                    </p>
+                                </div>
                                 <ProductGrid products={products} />
                             </>
                         )}
