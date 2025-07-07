@@ -10,7 +10,13 @@ const caches = new NodeCache({ stdTTL: 1000 });
 const app = express();
 const port = 3000;
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://jewelry-website-nky9yh6xi-umutozkrds-projects.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+    maxAge: 86400
+}));
 app.use(express.json());
 
 const loadProducts = async () => {
