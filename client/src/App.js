@@ -19,7 +19,7 @@ function App() {
         try {
             setLoading(true);
             setError(null);
-            const response = await axios.get('https://jewelery-website-production.up.railway.app/api/products');
+            const response = await axios.get('https://jewelry-website-production.up.railway.app/api/products');
             setProducts(response.data);
         } catch (err) {
             setError('Failed to load products. Please try again later.');

@@ -11,7 +11,7 @@ const app = express();
 const port = 3000;
 
 app.use(cors({
-    origin: 'https://jewelry-website-nky9yh6xi-umutozkrds-projects.vercel.app',
+    origin: ['https://jewelery-site-gwtmpytpv-umutozkrds-projects.vercel.app', 'http://localhost:3000'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
